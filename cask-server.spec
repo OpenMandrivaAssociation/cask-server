@@ -1,3 +1,5 @@
+%define devname %mklibname -d cask-server
+
 Name:		cask-server
 Version:	0.6.0
 Release:	1
@@ -6,6 +8,7 @@ Url:		http://mauikit.org/
 Source0:	https://github.com/Nitrux/cask-server/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
 Group:		Applications/Productivity
+BuildRequires:  appstream
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
@@ -15,6 +18,14 @@ BuildRequires:	cmake(Qt5DBus)
 
 %description
 Public server and API to interface with Cask features.
+
+%package -n %{devname}
+Summary:	Development files for cask-server
+Group:		Development/KDE and Qt
+Requires:	%{name} = %{EVRD}
+
+%description -n %{devname}
+Development files for public server and API to interface with Cask features.
 
 %prep
 %autosetup -p1 -n %{name}-%{version}
@@ -27,3 +38,10 @@ Public server and API to interface with Cask features.
 %ninja_install -C build
 
 %files
+%{_bindir}/CaskServer
+%{_datadir}/dbus-1/services/org.cask.Server.service
+
+%files -n %{devname}
+%{_includedir}/CaskServer/
+%{_libdir}/cmake/CaskServer/
+%{_libdir}/libCaskServerLib.so
