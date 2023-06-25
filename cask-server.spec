@@ -2,8 +2,8 @@
 %define devname %mklibname -d cask-server
 
 Name:		cask-server
-Version:	0.6.0
-Release:	2
+Version:	0.6.6
+Release:	1
 Summary:	Public server and API to interface with Cask features.
 Url:		http://mauikit.org/
 Source0:	https://github.com/Nitrux/cask-server/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
