@@ -3,7 +3,7 @@
 
 Name:		cask-server
 Version:	0.6.6
-Release:	1
+Release:	2
 Summary:	Public server and API to interface with Cask features.
 Url:		http://mauikit.org/
 Source0:	https://github.com/Nitrux/cask-server/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
@@ -13,7 +13,7 @@ BuildRequires:  appstream
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
-BuildRequires:  cmake(MauiKit)
+BuildRequires:  cmake(MauiKit3)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5DBus)
 
