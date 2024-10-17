@@ -5,7 +5,7 @@ Name:		cask-server
 Version:	0.6.6
 Release:	2
 Summary:	Public server and API to interface with Cask features.
-Url:		http://mauikit.org/
+Url:		https://mauikit.org/
 Source0:	https://github.com/Nitrux/cask-server/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
 Group:		Applications/Productivity
