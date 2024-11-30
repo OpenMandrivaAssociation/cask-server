@@ -3,19 +3,21 @@
 
 Name:		cask-server
 Version:	0.6.6
-Release:	2
+Release:	1.20231203
 Summary:	Public server and API to interface with Cask features.
 Url:		https://mauikit.org/
-Source0:	https://github.com/Nitrux/cask-server/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
+#Source0:	https://github.com/Nitrux/cask-server/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
+# Only git supporting qt6
+Source0:  cask-server-main.tar.gz
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
 Group:		Applications/Productivity
 BuildRequires:  appstream
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
-BuildRequires:  cmake(MauiKit3)
-BuildRequires:	cmake(Qt5Core)
-BuildRequires:	cmake(Qt5DBus)
+BuildRequires:  cmake(MauiKit4)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6DBus)
 
 %description
 Public server and API to interface with Cask features.
@@ -38,7 +40,7 @@ Requires: %{libname} = %{EVRD}
 Development files for public server and API to interface with Cask features.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n %{name}-main
 %cmake_kde5 -G Ninja
 
 %build
